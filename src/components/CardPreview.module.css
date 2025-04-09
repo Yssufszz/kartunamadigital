@@ -1,123 +1,134 @@
-body {
-  background-color: #1e1e1e;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .cardPreview {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 24px;
-  border-radius: 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  color: #ffffff;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cardBox {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  color: #e0e0e0;
-  animation: fadeIn 0.8s ease-in-out;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation-delay: 0.1s;
 }
 
 .title {
-  font-size: 1.8rem;
-  margin-bottom: 1.2rem;
-  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
   text-align: center;
-  font-weight: bold;
-}
-
-.cardBox, .qrContainer, .nfcLink {
-  margin-bottom: 28px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
-  animation: slideUp 1s ease forwards;
-  transition: transform 0.3s ease;
-}
-
-.cardBox:hover, .qrContainer:hover, .nfcLink:hover {
-  transform: translateY(-4px);
+  color: #fff;
 }
 
 .info p {
-  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.3rem 0;
   font-size: 1rem;
-  color: #dcdcdc;
+  color: #e0e0e0;
 }
 
-.qrContainer {
+.icon {
+  color: #00bcd4;
+}
+
+.qrContainer,
+.nfcLink {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 15px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1.5rem;
   text-align: center;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: fadeSlideIn 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
 }
 
-.qrContainer h4 {
+.qrContainer h4,
+.nfcLink h4 {
   font-size: 1.2rem;
-  margin-bottom: 12px;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  animation-delay: 0.5s;
 }
 
 .scanNote {
-  font-size: 0.85rem;
-  color: #bbbbbb;
-  margin-top: 10px;
-}
-
-.nfcLink h4 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #cccccc;
+  animation-delay: 0.5s;
 }
 
 .nfcLink input {
   width: 100%;
-  padding: 12px;
-  border-radius: 10px;
+  padding: 0.5rem;
+  border-radius: 8px;
   border: none;
-  background-color: #2d2d2d;
-  color: #f1f1f1;
-  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  font-size: 0.9rem;
+  animation-delay: 0.5s;
 }
 
 .copyBtn {
-  margin-top: 12px;
-  padding: 10px 18px;
-  background: linear-gradient(135deg, #4CAF50, #2e7d32);
-  color: #fff;
+  margin-top: 0.8rem;
+  background-color: #00bcd4;
+  color: #ffffff;
+  padding: 0.5rem 1.2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .copyBtn:hover {
-  background: linear-gradient(135deg, #43a047, #1b5e20);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  background-color: #0097a7;
 }
 
 @media (max-width: 600px) {
-  .cardPreview {
-    margin: 20px;
-    padding: 16px;
+  .cardBox,
+  .qrContainer,
+  .nfcLink {
+    padding: 1rem;
+    border-radius: 15px;
+  }
+
+  .info p {
+    font-size: 0.95rem;
   }
 
   .title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
-  .cardBox, .qrContainer, .nfcLink {
-    padding: 16px;
+  .copyBtn {
+    padding: 0.4rem 1rem;
   }
 }
