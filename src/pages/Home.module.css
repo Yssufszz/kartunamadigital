@@ -5,6 +5,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
+    
   }
   
   .header {
@@ -29,6 +30,7 @@
     max-width: 500px;
     margin: 0 auto;
     animation: fadeIn 0.8s ease;
+    text-align: left;
   }
   
   .section h2 {
