@@ -52,11 +52,13 @@ export default function Home() {
     );
   }, [status, name, email, nohp, jenjang, jurusan, fakultas, universitas, job, perusahaan]);
 
+  const baseUrl = 'https://kartunamadigital.vercel.app';
+
   const previewUrl =
     status === 'mahasiswa'
-      ? `http://localhost:5173/card?status=mahasiswa&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&nohp=${encodeURIComponent(nohp)}&jenjang=${encodeURIComponent(jenjang)}&jurusan=${encodeURIComponent(jurusan)}&fakultas=${encodeURIComponent(fakultas)}&universitas=${encodeURIComponent(universitas)}`
-      : `http://localhost:5173/card?status=kerja&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&nohp=${encodeURIComponent(nohp)}&job=${encodeURIComponent(job)}&perusahaan=${encodeURIComponent(perusahaan)}`;
-
+      ? `${baseUrl}/card?status=mahasiswa&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&nohp=${encodeURIComponent(nohp)}&jenjang=${encodeURIComponent(jenjang)}&jurusan=${encodeURIComponent(jurusan)}&fakultas=${encodeURIComponent(fakultas)}&universitas=${encodeURIComponent(universitas)}`
+      : `${baseUrl}/card?status=kerja&name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&nohp=${encodeURIComponent(nohp)}&job=${encodeURIComponent(job)}&perusahaan=${encodeURIComponent(perusahaan)}`;
+  
   return (
     <div className={styles.container}>
       <header className={styles.header}>
