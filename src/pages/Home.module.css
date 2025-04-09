@@ -1,0 +1,127 @@
+.container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #0f0f0f, #2c2c2c);
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .header {
+    padding: 60px 20px 40px;
+    text-align: center;
+    background: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .header p {
+    font-size: 1.1rem;
+    color: #ccc;
+  }
+  
+  .section {
+    padding: 30px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease;
+  }
+  
+  .section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #00ffd5;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+  
+  input {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  input:focus {
+    background-color: #3a3a3a;
+    outline: 2px solid #00ffd5;
+  }
+  
+  .resetButton {
+    padding: 10px 16px;
+    margin-top: 16px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 100%;
+    transition: background 0.3s ease;
+  }
+    
+  .resetButton:hover {
+    background-color: #c62828;
+  }
+  
+  select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 15px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  select:focus {
+    border-color: #4c8bf5;
+    box-shadow: 0 0 0 3px rgba(76, 139, 245, 0.3);
+    background-color: #fff;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .header h1 {
+      font-size: 2rem;
+    }
+  
+    .section h2 {
+      font-size: 1.25rem;
+    }
+  
+    input {
+      font-size: 0.95rem;
+    }
+  }
+  
